@@ -1,0 +1,282 @@
+.body {
+    font-family: monospace;
+}
+
+/*
+Following are the style for main.html
+*/
+.MAIN_PAGE_FRAME {
+    width: 1024px;
+    height: 2400px;
+    margin: auto;
+    box-shadow: 1px 1px 10px gray;
+    overflow: hidden;
+}
+/*Style for feed table*/
+.FEED_TABLE {
+    width: auto;
+    height: 95%;
+    margin: auto;
+    margin-top: 5%;
+    /*border: 1px solid black;*/
+}
+
+.FEED_TABLE table {
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 20px 20px;
+}
+
+.FEED_TABLE td {
+    width: 50%;
+    height: 650px;
+    border-radius: 9px;
+    box-shadow: 1px 1px 10px gray;
+    /*border: 1px solid black;*/
+    background-color: azure;
+}
+/*Style for feed information*/
+.FEED_CONTENT {
+    width: 98%;
+    height: 98%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/*Style for feed title: size and font*/
+.FEED_TITLE {
+    width: 100%;
+    height: 7%;
+    margin: auto;
+    margin-top: 2%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    /*background-color: forestgreen;*/
+}
+
+/*Style for feed content*/
+.FEED_DETAIL {
+    width: 98%;
+    height: 85%;
+    margin: auto;
+    margin-top: 2%;
+    overflow: hidden;
+    border-top: 1px dashed black;
+    /*background-color: dodgerblue;*/
+}
+/*Style for images*/
+.FEED_IMG {
+    width: 80%;
+    height: 40%;
+    margin: auto;
+    margin-top: 5%;
+    /*background-color: darkturquoise;*/
+}
+
+.FEED_IMG img {
+    width: 100%;
+    height: 100%;
+}
+
+.STOP_BUTTON {
+    width: 100%;
+    height: 4%;
+    text-align: center;
+    margin-top: 2%;
+}
+.STOP_BUTTON input {
+    width: 20%;
+    height: 100%;
+    border-radius: 3px;
+    border: none;
+    font-weight: bold;
+}
+/*Style for articles with image*/
+.FEED_IMG_ARTICLE {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    margin-top: 5%;
+    /*background-color: bisque;*/
+    font-size: 20px;
+}
+/*Style for articles without image*/
+.FEED_ARTICLE {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    margin-top: 10%;
+    /*background-color: bisque;*/
+    font-size: 20px;
+}
+/*Style for link redirect to user profile*/
+.PROFILE_LINK {
+    width: 30%;
+    height: 30px;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    /*background-color: azure;*/
+}
+
+.PROFILE_LINK hr {
+    border: none;
+    border-top: 1px dashed lightgray;
+}
+
+.PROFILE_LINK a:active {
+    color: black;
+}
+
+.PROFILE_LINK a:hover {
+    color: black;
+}
+
+.PROFILE_LINK a:visited {
+    color: black;
+}
+
+
+
+/*
+****************************************
+Following are the style for profile.html
+*/
+.PROFILE_MAINDIV {
+    width: 1024px;
+    height: 1300px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px gray;
+    /*background-color: aqua;*/
+}
+
+.PROFILE_TITLE {
+    width: 100%;
+    height: 5%;
+    margin-top: 3%;
+    font-size: 40px;
+    text-align: center;
+}
+
+.PROFILE_MAINDIV span {
+    font-size: 25px;
+}
+
+/*Style for hint*/
+.HINT {
+    width: 250px;
+    height: 30px;
+    text-align: right;
+    margin-right: 15px;
+    margin-top: 40px;
+    float: left;
+    clear: both;
+    /*background-color: beige;*/
+}
+/*Style for user input*/
+.USER_INPUT {
+    width: auto;
+    height: auto;
+    float: left;
+    margin-top: 40px;
+    /*background-color: burlywood;*/
+}
+
+.USER_INPUT input {
+    height: 25px;
+    width: 200px;
+    font-size: 25px;
+    text-indent: 5px;
+    border: 1px solid lightgray;
+}
+
+.USER_INPUT input:focus {
+    border-bottom: 1px solid black;
+    outline: none;
+}
+/*Style for pre-loaded value*/
+.LOAD_VALUE {
+    height: auto;
+    width: 250px;
+    text-align: left;
+    margin-top: 40px;
+    margin-left: 10px;
+    float: left;
+    /*background-color: darkturquoise;*/
+}
+
+.LOAD_VALUE span {
+    font-weight: 100;
+    color: #A4A4A4;
+}
+/*Style for inform messages*/
+.ALERT {
+    clear: both;
+    width: auto;
+    height: auto;
+    visibility: hidden;
+}
+
+.ALERT span {
+    margin-left: 270px;
+    font-size: 18px;
+    color: red;
+}
+/*Style for submit button and return link*/
+.BUTTON_RETURN {
+    width: 1024px;
+    height: auto;
+    margin: auto;
+    /*background-color: antiquewhite;*/
+    clear: both;
+}
+
+.BUTTON_RETURN input {
+    width: 150px;
+    height: 35px;
+    margin-top: 50px;
+    margin-left: 265px;
+    border-radius: 9px;
+    color: white;
+    font-size: 20px;
+    background-color: #0B2161;
+    border: 1px solid #0B2161;
+    outline: none;
+}
+
+.BUTTON_RETURN input:hover {
+    background-color: #0B3861;
+}
+
+.BUTTON_RETURN hr {
+    margin-top: 200px;
+    border: none;
+    width: 30%;
+    border-top: 1px dashed lightgray;
+}
+
+.RETURN_LINK {
+    width: 100%;
+    height: 30px;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    /*background-color: azure;*/
+}
+
+.RETURN_LINK a:active {
+    color: black;
+}
+
+.RETURN_LINK a:hover {
+    color: black;
+}
+
+.RETURN_LINK a:visited {
+    color: black;
+}

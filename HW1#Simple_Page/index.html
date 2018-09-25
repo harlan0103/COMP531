@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+        <style type="text/css">
+            /*Rice blue: #0B2161*/
+            /*Rice gray: #BDBDBD*/
+            body {
+                font-family: monospace;
+            }
+            .SIGN_UP_FORM {
+                overflow: hidden;
+                width: 900px;
+                height: 950px;
+                margin: auto;
+                margin-top: 30px;
+                /*background-color: beige;*/
+                box-shadow: gray 1px 1px 10px 1px;
+            }
+            /*Set up "New User" and "*Required fields"*/
+            .NEW_USER {
+                margin-top: 40px;
+                margin-left: 30px;
+                margin-right: 30px;
+                /*background-color: cornsilk;*/
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .NEW_USER_REQUIRED {
+                margin-top: 5px;
+                font-size: 15px;
+                font-weight: 100;
+                color: #BDBDBD;
+            }
+            /*Set up user input information*/
+            .SIGN_UP_INFORMATION {
+                width: auto;
+                height: 700px;
+                margin: auto;
+                margin-top: 40px;
+                margin-left: 30px;
+                margin-right: 30px;
+                /*background-color: antiquewhite;*/
+                font-size: 20px;
+            }
+            .SIGN_UP_INFORMATION input {
+                width: 400px;
+                height: 35px;
+                font-size: 20px;
+                text-indent: 5px;
+                margin-bottom: 20px;
+                border: 1px solid #D8D8D8;
+            }
+            /* Change bottom border to black */
+            .SIGN_UP_INFORMATION input:focus {
+                outline: none;
+                border-bottom: 1px solid black;
+            }
+            .SIGN_UP_BUTTON {
+                width: auto;
+                height: auto;
+                margin-top: 20px;
+                /*background-color: azure;*/
+            }
+            .SIGN_UP_BUTTON input {
+                height: 40px;
+                font-size: 20px;
+                border: none;
+                border-radius: 3px;
+                background-color: #0B2161;
+                color: white;
+            }
+            .SIGN_UP_BUTTON input:hover {
+                background-color: #0B3861;
+            }
+        </style>
+    </head>
+    
+    <body onload="hiddenTime()">
+        <!--A form with text field for user's-->
+        <div class="SIGN_UP_FORM">
+            
+            <div class="NEW_USER">
+                New User
+                <div class="NEW_USER_REQUIRED">
+                    *Required fields
+                </div>
+            </div>
+            
+            
+            <div class="SIGN_UP_INFORMATION">
+                <form method="GET" action="formProcessor.html">
+                    <!--Account starts with letters, and can only be upper or lower case letters and numbers-->
+                    ACCOUNT NAME *<br/> 
+                    <input type="text" id="account" name="account" pattern="^[a-zA-Z][a-zA-Z0-9]*$" required onchange="checkAccount()"><br/>
+                
+                    DISPLAY NAME<br/> 
+                    <input type="text" id="display" name="display"><br/>
+                
+                    EMAIL ADDRESS *<br/> 
+                    <input type="email" id="email" name="email" placeholder="rice@ricebook.com" required><br/>
+                
+                    PHONE NUMBER *<br/> 
+                    <input type="text" id="phone" name="phone" placeholder="123-123-1234" pattern="\d{3}[\-]\d{3}[\-]\d{4}" required><br/>
+                
+                    DATE OF BIRTH *<br/> 
+                    <input type="date" id="birth" name="birth" placeholder="mm/dd/yy" required onchange="checkBirth()"><br/>
+                
+                    ZIPCODE *<br/> 
+                    <input type="text" id="zipcode" name="zipcode" placeholder="77005" pattern="\d{5}" required><br/>
+                
+                    PASSWORD *<br/> 
+                    <input type="password" id="pwd" name="pwd" required><br/>
+                
+                    COMFIRM PASSWORD *<br/> 
+                    <input type="password" id="repwd" name="repwd" required onchange="checkPassword()"><br/>
+            
+                    <!--This is the division for "SUBMIT" button and "CLEAR" button-->
+                    <div class="SIGN_UP_BUTTON">
+                        <!--Submit button performs validation on the form-->
+                        <input type="submit" value="SUBMIT">
+                        <!--Clear button empties all fields-->
+                        <input type="reset" value="CLEAR">
+                    </div>
+                    
+                    <!--A hidden field timestamp contain current timestamp in millis-->
+                    <input type="hidden" id="timestamp" name="hidden">
+                </form>  
+            </div> 
+        </div>
+        
+        <!--Javascript starts here-->
+        <script type="text/javascript">
+            
+            //@hiddenTime()
+            //When the page is loaded
+            //Set current system time in millis as the value of timestamp
+            function hiddenTime(){
+                var systemDate = Date.now();
+                document.getElementById("timestamp").value = systemDate;
+                console.log(systemDate);
+            }
+            
+            //@checkAccount()
+            //Check if user input is match the pattern
+            function checkAccount(){
+                var account = document.getElementById("account");
+                if(account.validity){
+                    account.setCustomValidity("");
+                }
+                else if(account.validity.patternMismatch){
+                    account.setCustomValidity("Account name can only be upper and lower letters and numbers, but may not start with a number");
+                }
+            }
+            
+            //@checkBirth()
+            //Get user input date
+            //Get current date
+            //Check if user is over 18
+            function checkBirth(){
+                var birth = document.getElementById("birth");
+                //Get user input date in YY-MM-DD
+                var inputYear = birth.value.substring(0,4);
+                var inputMonth = birth.value.substring(5,7);
+                var inputDay = birth.value.substring(8,10);
+                //Get current date
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                //Check if user is over 18
+                if(year - inputYear < 18){ //Not over 18
+                    birth.setCustomValidity("You must be 18 or older");
+                    console.log("not 18");
+                }
+                else{
+                    if(month - inputMonth < 0){
+                        birth.setCustomValidity("You must be 18 or older");
+                        console.log("not 18");
+                    }
+                    else{
+                        if(day - inputDay < 0){
+                            birth.setCustomValidity("You must be 18 or older");
+                            console.log("not 18");
+                        }
+                        else{
+                            birth.setCustomValidity("");
+                            console.log("is 18");
+                        }
+                    }
+                }
+            }
+            
+            //@checkPassword()
+            //Check if password and confirm password are the same
+            function checkPassword(){
+                var pwd = document.getElementById("pwd");
+                var repwd = document.getElementById("repwd");
+                if(pwd.value == repwd.value){
+                    repwd.setCustomValidity("");
+                }
+                else if(pwd.value != repwd.value){
+                    repwd.setCustomValidity("Please enter the same password");   
+                }
+            }
+        </script>
+    </body>
+</html>

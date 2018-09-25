@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Processor</title>
+        <style type="text/css">
+            .TABLE {
+                width: 700px;
+                height: 800px;
+                margin: auto;
+                border: 1px solid black;
+            }
+            .TABLE th {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    
+    <body onload="displayInfo()">
+        <!--Display key value pairs in a table-->
+        <table class="TABLE">
+            <tr>
+                <th>Info</th>
+                <th>User Input</th>
+            </tr>
+            <tr>
+                <th>Account Name</th>
+                <th id="account"></th>
+            </tr>
+            <tr>
+                <th>Display Name</th>
+                <th id="display"></th>
+            </tr>
+            <tr>
+                <th>Email Address</th>
+                <th id="email"></th>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <th id="phone"></th>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <th id="birth"></th>
+            </tr>
+            <tr>
+                <th>Zipcode</th>
+                <th id="zipcode"></th>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <th id="pwd"></th>
+            </tr>
+            <tr>
+                <th>Confirm Password</th>
+                <th id="repwd"></th>
+            </tr>
+            <tr>
+                <th>Hidden Timestamp</th>
+                <th id="hidden"></th>
+            </tr>
+        </table>
+        
+        <script>
+            //Get user input from index.html
+            var param = window.location.search;
+            console.log(param);
+            
+            //@getParam()
+            //Get param info from url
+            function getParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+                var r = window.location.search.substr(1).match(reg); 
+                if(r != null){
+                    return unescape(r[2]);
+                }
+                else{
+                    return null;  
+                }
+            }
+            
+            //@displayInfo()
+            //set user input information into innerHTML
+            function displayInfo(){
+                document.getElementById("account").innerHTML = getParam("account");
+                document.getElementById("display").innerHTML = getParam("display");
+                document.getElementById("email").innerHTML = getParam("email");
+                document.getElementById("phone").innerHTML = getParam("phone");
+                document.getElementById("birth").innerHTML = getParam("birth");
+                document.getElementById("zipcode").innerHTML = getParam("zipcode");
+                document.getElementById("pwd").innerHTML = getParam("pwd");
+                document.getElementById("repwd").innerHTML = getParam("repwd");
+                document.getElementById("hidden").innerHTML = Date(getParam("hidden"));
+            }
+            
+        </script>
+    </body>
+</html>
