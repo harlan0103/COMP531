@@ -1,0 +1,67 @@
+<TESTLIST>
+    <TEST>
+        <TESTID>1</TESTID>
+        <TESTCONTENT>Should log in a previously registered user</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+    
+    <TEST>
+        <TESTID>2</TESTID>
+        <TESTCONTENT>Should update success message</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>3</TESTID>
+        <TESTCONTENT>Should not log in an invalid user</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>4</TESTID>
+        <TESTCONTENT>Should update error message</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>5</TESTID>
+        <TESTCONTENT>Should fetch articles for current logged in user</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>6</TESTID>
+        <TESTCONTENT>Should update the search keyword</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>7</TESTID>
+        <TESTCONTENT>Should filter displayed articles by the search keyword</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>8</TESTID>
+        <TESTCONTENT>Should add articles when adding a follower</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>9</TESTID>
+        <TESTCONTENT>Should remove articles when removing a follower</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>10</TESTID>
+        <TESTCONTENT>Should fetch the logged in user's profile information</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+
+    <TEST>
+        <TESTID>11</TESTID>
+        <TESTCONTENT>Should log out a user</TESTCONTENT>
+        <STATUS>SUCCESS</STATUS>
+    </TEST>
+</TESTLIST>
