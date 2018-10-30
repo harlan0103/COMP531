@@ -1,3 +1,3 @@
 # COMP531
-Web Development and Design<br/>
-Fall 2018 @ Rice University
+<b>Web Development and Design</b><br/>
+<b>Fall 2018 @ Rice University</b>
